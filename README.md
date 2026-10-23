@@ -95,27 +95,51 @@ src/
     └── apartments.ts # Данные о квартирах
 ```
 
-## 📦 Деплой
+## 📦 Деплой на GitHub Pages
 
-### Vercel
+### Автоматический деплой (рекомендуется)
 
+Проект настроен на автоматический деплой через GitHub Actions.
+
+1. Создайте репозиторий на GitHub:
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/mediacom-service-prototype-2e664.git
+git push -u origin main
+```
+
+2. В настройках репозитория:
+   - Перейдите в **Settings** → **Pages**
+   - В разделе **Source** выберите **GitHub Actions**
+   - Workflow запустится автоматически при каждом push в ветку `main`
+
+3. После успешного деплоя сайт будет доступен по адресу:
+   ```
+   https://YOUR_USERNAME.github.io/mediacom-service-prototype-2e664/
+   ```
+
+### Ручной деплой
+
+```bash
+npm run build
+# Загрузите содержимое папки dist/ в ветку gh-pages
+```
+
+### Альтернативные платформы
+
+**Vercel:**
 ```bash
 npm install -g vercel
 vercel
 ```
 
-### Netlify
-
+**Netlify:**
 ```bash
 npm run build
 # Загрузите папку dist/ в Netlify
-```
-
-### GitHub Pages
-
-```bash
-npm run build
-# Настройте GitHub Pages на папку dist/
 ```
 
 ## 📄 Лицензия
